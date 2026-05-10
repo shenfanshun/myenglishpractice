@@ -405,8 +405,7 @@ Important: each "word" in vocab must appear EXACTLY (same form) in the sentences
     );
     const data = await res.json();
     if (data.error) throw new Error(data.error.message);
-    let raw = data.candidates[0].content.parts[0].text;
-    raw = raw.replace(/```json|```/g, '').trim();
+    let raw = data.candidates[0].content.parts[0].text.replace(/```json|```/g, '').trim();
     currentArticle = JSON.parse(raw);
     quizAnswered = [false,false,false];
     quizScore = 0;
