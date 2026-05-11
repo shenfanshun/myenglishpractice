@@ -184,7 +184,7 @@ header { background: #fff; border-bottom: 2px solid #e8edf2; padding: 14px 24px;
 
 <script>
 const K_PWD = 'den_pwd', K_AUTH = 'den_auth';
-const HARD_PASSWORD = 'GA8719eng';
+const HARD_PASSWORD = '你的密碼';
 
 // 自動儲存硬編碼密碼
 localStorage.setItem(K_PWD, HARD_PASSWORD);
@@ -197,12 +197,14 @@ localStorage.setItem(K_PWD, HARD_PASSWORD);
 
 function show(id) {
   const login = document.getElementById('loginScreen');
-  if (login) login.classList.toggle('active', id === 'loginScreen');
+  if (id === 'loginScreen') login.classList.add('active');
+  else login.classList.remove('active');
 }
+
 function showApp() {
-  document.getElementById('setupScreen').classList.remove('active');
   document.getElementById('loginScreen').classList.remove('active');
-  document.getElementById('app').style.display = 'block';
+  const app = document.getElementById('app');
+  app.style.display = 'block';
   document.getElementById('dateBadge').textContent = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 }
 
@@ -226,7 +228,6 @@ function doLogout() {
   document.getElementById('loginErr').textContent = '';
   show('loginScreen');
 }
-
 let currentLevel = 'beginner';
 function selectLevel(lv) {
   currentLevel = lv;
