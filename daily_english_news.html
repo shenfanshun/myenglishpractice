@@ -207,13 +207,16 @@ header { background: #fff; border-bottom: 2px solid #e8edf2; padding: 14px 24px;
 </div>
 
 <script>
-const K_PWD = 'den_pwd', K_KEY = 'den_apikey', K_AUTH = 'den_auth';
+const K_PWD = 'den_pwd', K_AUTH = 'den_auth';
+const HARD_API_KEY = '你的Gemini API Key';
+const HARD_PASSWORD = '你的密碼';
+
+// 自動儲存硬編碼密碼
+localStorage.setItem(K_PWD, HARD_PASSWORD);
 
 (function init() {
-  const hasCreds = localStorage.getItem(K_PWD) && localStorage.getItem(K_KEY);
   const isAuthed = sessionStorage.getItem(K_AUTH) === '1';
-  if (!hasCreds) show('setupScreen');
-  else if (isAuthed) showApp();
+  if (isAuthed) showApp();
   else show('loginScreen');
 })();
 
@@ -228,20 +231,6 @@ function showApp() {
   document.getElementById('dateBadge').textContent = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 }
 
-function doSetup() {
-  const key = document.getElementById('setupApiKey').value.trim();
-  const pwd = document.getElementById('setupPwd').value;
-  const pwd2 = document.getElementById('setupPwd2').value;
-  const err = document.getElementById('setupErr');
-  if (!key) { err.textContent = '請輸入 Gemini API Key'; return; }
-  if (pwd.length < 4) { err.textContent = '密碼至少 4 個字元'; return; }
-  if (pwd !== pwd2) { err.textContent = '兩次密碼不一致'; return; }
-  localStorage.setItem(K_KEY, key);
-  localStorage.setItem(K_PWD, pwd);
-  sessionStorage.setItem(K_AUTH, '1');
-  err.textContent = '';
-  showApp();
-}
 
 function doLogin() {
   const pwd = document.getElementById('loginPwd').value;
@@ -282,7 +271,7 @@ let isSpeakingFull = false;
 
 async function generateArticle() {
   const topic = document.querySelector('.topic-btn.active').dataset.topic;
-  const apiKey = localStorage.getItem(K_KEY);
+  const apiKey = HARD_API_KEY;
   const btn = document.getElementById('generateBtn');
   const btnText = document.getElementById('btnText');
   btn.disabled = true;
