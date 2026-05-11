@@ -397,14 +397,26 @@ Important: each "word" in vocab must appear EXACTLY (same form) in the sentences
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.8, maxOutputTokens: 1200 }
+          generationConfig: { temperature: 0.8, maxOutputTokens: 2048 }
         })
       }
     );
     const data = await res.json();
     if (data.error) throw new Error(data.error.message);
     let raw = data.candidates[0].content.parts[0].text.replace(/```json|```/g, '').trim();
-    currentArticle = JSON.parse(raw);
+    // 若 JSON 被截斷，嘗試補上結尾
+    try {
+      currentArticle = JSON.parse(raw);
+    } catch(e) {
+      // 找到最後一個完整的 } 並截斷
+      const lastBrace = raw.lastIndexOf('}');
+      if (lastBrace !== -1) raw = raw.substring(0, lastBrace + 1);
+      // 嘗試補上缺少的結尾括號
+      const opens = (raw.match(/{/g) || []).length;
+      const closes = (raw.match(/}/g) || []).length;
+      for (let i = 0; i < opens - closes; i++) raw += '}';
+      currentArticle = JSON.parse(raw);
+    }
     quizAnswered = [false,false,false];
     quizScore = 0;
     renderAll();
