@@ -119,30 +119,6 @@ header { background: #fff; border-bottom: 2px solid #e8edf2; padding: 14px 24px;
 </head>
 <body>
 
-<!-- Setup -->
-<div class="screen active" id="setupScreen">
-  <div class="login-box">
-    <div class="login-logo">⚙️</div>
-    <div class="login-title">初次設定</div>
-    <div class="login-sub">First-time Setup</div>
-    <div class="setup-step">
-      <div class="step-badge">STEP 1 — API Key</div>
-      <label>Google Gemini API Key</label>
-      <input type="password" id="setupApiKey" placeholder="請貼上你的 Gemini API Key" />
-      <div class="login-hint">免費申請：<a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a><br>登入後點「Get API key」即可取得</div>
-    </div>
-    <div class="setup-step" style="margin-top:20px;">
-      <div class="step-badge">STEP 2 — 設定密碼</div>
-      <label>自訂登入密碼</label>
-      <input type="password" id="setupPwd" placeholder="設定你的專屬密碼" />
-      <label>確認密碼</label>
-      <input type="password" id="setupPwd2" placeholder="再輸入一次密碼" />
-    </div>
-    <button class="login-btn" onclick="doSetup()">完成設定 →</button>
-    <div class="login-err" id="setupErr"></div>
-  </div>
-</div>
-
 <!-- Login -->
 <div class="screen" id="loginScreen">
   <div class="login-box">
@@ -208,8 +184,8 @@ header { background: #fff; border-bottom: 2px solid #e8edf2; padding: 14px 24px;
 
 <script>
 const K_PWD = 'den_pwd', K_AUTH = 'den_auth';
-const HARD_API_KEY = 'AIzaSyC_o9LSyIBHmhpsrkTIJqsoaxNlV34tjHY';
-const HARD_PASSWORD = 'GA8719eng';
+const HARD_API_KEY = '你的Gemini API Key';
+const HARD_PASSWORD = '你的密碼';
 
 // 自動儲存硬編碼密碼
 localStorage.setItem(K_PWD, HARD_PASSWORD);
@@ -221,8 +197,8 @@ localStorage.setItem(K_PWD, HARD_PASSWORD);
 })();
 
 function show(id) {
-  ['setupScreen','loginScreen'].forEach(s =>
-    document.getElementById(s).classList.toggle('active', s === id));
+  const login = document.getElementById('loginScreen');
+  if (login) login.classList.toggle('active', id === 'loginScreen');
 }
 function showApp() {
   document.getElementById('setupScreen').classList.remove('active');
