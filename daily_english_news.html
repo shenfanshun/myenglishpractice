@@ -8,26 +8,16 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', 'PingFang TC', sans-serif; background: #f5f7fa; color: #333; min-height: 100vh; }
 
-/* ── Login / Setup Screen ── */
 .screen { display: none; position: fixed; inset: 0; background: #f5f7fa; z-index: 100; align-items: center; justify-content: center; }
 .screen.active { display: flex; }
-.login-box {
-  background: #fff; border-radius: 16px; padding: 36px 32px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10); width: 100%; max-width: 380px; text-align: center;
-}
+.login-box { background: #fff; border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); width: 100%; max-width: 380px; text-align: center; }
 .login-logo { font-size: 40px; margin-bottom: 12px; }
 .login-title { font-size: 20px; font-weight: 800; color: #1e293b; margin-bottom: 4px; }
 .login-sub { font-size: 13px; color: #94a3b8; margin-bottom: 24px; }
 .login-box label { display: block; text-align: left; font-size: 12px; font-weight: 700; color: #64748b; margin-bottom: 6px; letter-spacing: 0.5px; }
-.login-box input {
-  width: 100%; padding: 11px 14px; border: 1.5px solid #e2e8f0; border-radius: 9px;
-  font-size: 14px; margin-bottom: 14px; outline: none; transition: border 0.2s;
-}
+.login-box input { width: 100%; padding: 11px 14px; border: 1.5px solid #e2e8f0; border-radius: 9px; font-size: 14px; margin-bottom: 14px; outline: none; transition: border 0.2s; }
 .login-box input:focus { border-color: #3b82f6; }
-.login-btn {
-  width: 100%; padding: 12px; background: #3b82f6; color: #fff; border: none;
-  border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 4px;
-}
+.login-btn { width: 100%; padding: 12px; background: #3b82f6; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
 .login-btn:hover { background: #2563eb; }
 .login-err { color: #dc2626; font-size: 13px; margin-top: 8px; min-height: 20px; }
 .login-hint { font-size: 12px; color: #94a3b8; margin-top: 16px; line-height: 1.6; }
@@ -35,12 +25,8 @@ body { font-family: 'Segoe UI', 'PingFang TC', sans-serif; background: #f5f7fa; 
 .setup-step { margin-bottom: 16px; }
 .step-badge { display: inline-block; background: #eff6ff; color: #3b82f6; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
 
-/* ── Main App ── */
 #app { display: none; }
-header {
-  background: #fff; border-bottom: 2px solid #e8edf2;
-  padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
-}
+header { background: #fff; border-bottom: 2px solid #e8edf2; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-icon { width: 34px; height: 34px; background: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 17px; }
 .logo-text h1 { font-size: 16px; font-weight: 700; color: #1e293b; }
@@ -51,7 +37,6 @@ header {
 .logout-btn:hover { border-color: #dc2626; color: #dc2626; }
 
 .main { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
-
 .topic-bar { background: #fff; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .section-label { font-size: 12px; color: #64748b; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px; }
 
@@ -103,14 +88,6 @@ header {
 .speed-select { padding: 7px 10px; border-radius: 8px; border: 1.5px solid #e2e8f0; font-size: 13px; color: #475569; background: #fff; cursor: pointer; }
 .tts-tip { font-size: 12px; color: #94a3b8; margin-top: 10px; }
 
-.sentences-wrap { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
-.sent-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #e2e8f0; background: #f8fafc; transition: all 0.2s; }
-.sent-row.speaking { background: #eff6ff; border-color: #3b82f6; }
-.sent-num { font-size: 11px; font-weight: 700; color: #94a3b8; min-width: 18px; padding-top: 2px; }
-.sent-text { font-size: 14px; color: #1e293b; line-height: 1.7; flex: 1; }
-.sent-play-btn { background: none; border: none; cursor: pointer; font-size: 17px; padding: 0 2px; transition: transform 0.15s; flex-shrink: 0; }
-.sent-play-btn:hover { transform: scale(1.2); }
-
 .vocab-card { padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #3b82f6; }
 .vocab-top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
 .vocab-word-text { font-size: 15px; font-weight: 700; color: #1e293b; }
@@ -137,29 +114,23 @@ header {
 .spinner { display: inline-block; width: 15px; height: 15px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .section-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: #3b82f6; color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; }
-
 @media(max-width:600px) { .card { padding: 14px; } .login-box { padding: 28px 20px; } }
 </style>
 </head>
 <body>
 
-<!-- ① 首次設定畫面（設定 API Key + 密碼） -->
+<!-- Setup -->
 <div class="screen active" id="setupScreen">
   <div class="login-box">
     <div class="login-logo">⚙️</div>
     <div class="login-title">初次設定</div>
     <div class="login-sub">First-time Setup</div>
-
     <div class="setup-step">
       <div class="step-badge">STEP 1 — API Key</div>
       <label>Google Gemini API Key</label>
       <input type="password" id="setupApiKey" placeholder="請貼上你的 Gemini API Key" />
-      <div class="login-hint">
-        免費申請：<a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a><br>
-        登入後點「Get API key」即可取得
-      </div>
+      <div class="login-hint">免費申請：<a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a><br>登入後點「Get API key」即可取得</div>
     </div>
-
     <div class="setup-step" style="margin-top:20px;">
       <div class="step-badge">STEP 2 — 設定密碼</div>
       <label>自訂登入密碼</label>
@@ -167,13 +138,12 @@ header {
       <label>確認密碼</label>
       <input type="password" id="setupPwd2" placeholder="再輸入一次密碼" />
     </div>
-
     <button class="login-btn" onclick="doSetup()">完成設定 →</button>
     <div class="login-err" id="setupErr"></div>
   </div>
 </div>
 
-<!-- ② 登入畫面 -->
+<!-- Login -->
 <div class="screen" id="loginScreen">
   <div class="login-box">
     <div class="login-logo">📰</div>
@@ -183,19 +153,15 @@ header {
     <input type="password" id="loginPwd" placeholder="輸入你的密碼" onkeydown="if(event.key==='Enter')doLogin()" />
     <button class="login-btn" onclick="doLogin()">登入 Login</button>
     <div class="login-err" id="loginErr"></div>
-
   </div>
 </div>
 
-<!-- ③ 主應用 -->
+<!-- App -->
 <div id="app">
   <header>
     <div class="logo">
       <div class="logo-icon">📰</div>
-      <div class="logo-text">
-        <h1>Daily English News</h1>
-        <p>每日英語新聞練習</p>
-      </div>
+      <div class="logo-text"><h1>Daily English News</h1><p>每日英語新聞練習</p></div>
     </div>
     <div class="header-right">
       <div class="date-badge" id="dateBadge"></div>
@@ -208,14 +174,10 @@ header {
       <div class="section-label">選擇程度 CHOOSE LEVEL</div>
       <div class="level-selector">
         <button class="level-btn active-beginner" id="lvBeginner" onclick="selectLevel('beginner')">
-          <div class="lv-emoji">🌱</div>
-          <div class="lv-name">初階 Beginner</div>
-          <div class="lv-tag">A1 – A2</div>
+          <div class="lv-emoji">🌱</div><div class="lv-name">初階 Beginner</div><div class="lv-tag">A1 – A2</div>
         </button>
         <button class="level-btn" id="lvIntermediate" onclick="selectLevel('intermediate')">
-          <div class="lv-emoji">🚀</div>
-          <div class="lv-name">中階 Intermediate</div>
-          <div class="lv-tag">B1 – B2</div>
+          <div class="lv-emoji">🚀</div><div class="lv-name">中階 Intermediate</div><div class="lv-tag">B1 – B2</div>
         </button>
       </div>
       <div class="section-label">選擇主題 CHOOSE TOPIC</div>
@@ -233,10 +195,7 @@ header {
       </button>
     </div>
     <div id="content">
-      <div class="placeholder">
-        <div class="ph-icon">📖</div>
-        <p>選擇程度與主題，點擊上方按鈕開始今日練習！<br>Choose your level and topic, then click the button!</p>
-      </div>
+      <div class="placeholder"><div class="ph-icon">📖</div><p>選擇程度與主題，點擊上方按鈕開始今日練習！<br>Choose your level and topic, then click the button!</p></div>
     </div>
   </div>
 </div>
@@ -248,38 +207,27 @@ header {
 </div>
 
 <script>
-// ── Storage keys ──
-const K_PWD = 'den_pwd';
-const K_KEY = 'den_apikey';
-const K_AUTH = 'den_auth';
+const K_PWD = 'den_pwd', K_KEY = 'den_apikey', K_AUTH = 'den_auth';
 
-// ── Init: decide which screen to show ──
 (function init() {
   const hasCreds = localStorage.getItem(K_PWD) && localStorage.getItem(K_KEY);
   const isAuthed = sessionStorage.getItem(K_AUTH) === '1';
-  if (!hasCreds) {
-    show('setupScreen');
-  } else if (isAuthed) {
-    showApp();
-  } else {
-    show('loginScreen');
-  }
+  if (!hasCreds) show('setupScreen');
+  else if (isAuthed) showApp();
+  else show('loginScreen');
 })();
 
 function show(id) {
-  ['setupScreen','loginScreen'].forEach(s => {
-    document.getElementById(s).classList.toggle('active', s === id);
-  });
+  ['setupScreen','loginScreen'].forEach(s =>
+    document.getElementById(s).classList.toggle('active', s === id));
 }
-
 function showApp() {
   document.getElementById('setupScreen').classList.remove('active');
   document.getElementById('loginScreen').classList.remove('active');
   document.getElementById('app').style.display = 'block';
-  document.getElementById('dateBadge').textContent = new Date().toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+  document.getElementById('dateBadge').textContent = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 }
 
-// ── Setup ──
 function doSetup() {
   const key = document.getElementById('setupApiKey').value.trim();
   const pwd = document.getElementById('setupPwd').value;
@@ -295,20 +243,17 @@ function doSetup() {
   showApp();
 }
 
-// ── Login ──
 function doLogin() {
   const pwd = document.getElementById('loginPwd').value;
   const err = document.getElementById('loginErr');
   if (pwd === localStorage.getItem(K_PWD)) {
     sessionStorage.setItem(K_AUTH, '1');
-    show('');
-    showApp();
+    show(''); showApp();
   } else {
     err.textContent = '密碼錯誤，請再試一次';
     document.getElementById('loginPwd').value = '';
   }
 }
-
 function doLogout() {
   sessionStorage.removeItem(K_AUTH);
   document.getElementById('app').style.display = 'none';
@@ -317,25 +262,11 @@ function doLogout() {
   show('loginScreen');
 }
 
-function resetAll() {
-  if (!confirm('確定要重設 API Key 與密碼嗎？')) return;
-  localStorage.removeItem(K_PWD);
-  localStorage.removeItem(K_KEY);
-  sessionStorage.removeItem(K_AUTH);
-  document.getElementById('setupApiKey').value = '';
-  document.getElementById('setupPwd').value = '';
-  document.getElementById('setupPwd2').value = '';
-  document.getElementById('setupErr').textContent = '';
-  document.getElementById('app').style.display = 'none';
-  show('setupScreen');
-}
-
-// ── Level / Topic ──
 let currentLevel = 'beginner';
 function selectLevel(lv) {
   currentLevel = lv;
-  document.getElementById('lvBeginner').className = 'level-btn' + (lv==='beginner' ? ' active-beginner' : '');
-  document.getElementById('lvIntermediate').className = 'level-btn' + (lv==='intermediate' ? ' active-intermediate' : '');
+  document.getElementById('lvBeginner').className = 'level-btn' + (lv==='beginner'?' active-beginner':'');
+  document.getElementById('lvIntermediate').className = 'level-btn' + (lv==='intermediate'?' active-intermediate':'');
 }
 document.querySelectorAll('.topic-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -344,14 +275,11 @@ document.querySelectorAll('.topic-btn').forEach(btn => {
   });
 });
 
-// ── Article state ──
 let currentArticle = null;
 let quizAnswered = [false,false,false];
 let quizScore = 0;
-let currentUtterance = null;
 let isSpeakingFull = false;
 
-// ── Generate via Gemini ──
 async function generateArticle() {
   const topic = document.querySelector('.topic-btn.active').dataset.topic;
   const apiKey = localStorage.getItem(K_KEY);
@@ -361,33 +289,26 @@ async function generateArticle() {
   btnText.innerHTML = '<span class="spinner"></span> 生成中 Generating...';
   stopAll();
 
-  const levelDesc = currentLevel === 'beginner'
-    ? 'beginner (CEFR A1-A2): simple sentences, basic vocabulary, present tense mostly, 6-7 sentences'
-    : 'intermediate (CEFR B1-B2): moderate length, wider vocabulary, mixed tenses, 6-7 sentences';
+  const isInter = currentLevel === 'intermediate';
+  const vocabCount = isInter ? 8 : 6;
+  const sentCount = '6-7';
+  const levelDesc = isInter
+    ? 'intermediate (CEFR B1-B2): varied vocabulary, mixed tenses'
+    : 'beginner (CEFR A1-A2): simple words, present tense';
 
-  const prompt = `You are an English teacher creating a short news article for ${levelDesc} learners. Topic: ${topic}
+  // 分開建構 vocab 範例，避免 template literal 過長
+  let vocabSample = '';
+  for (let i = 1; i <= vocabCount; i++) {
+    vocabSample += `{"word":"w${i}","pos":"pos","zh":"意思","example":"Ex."}`;
+    if (i < vocabCount) vocabSample += ',';
+  }
 
-Respond ONLY with a valid JSON object, no markdown, no backticks, no extra text:
-{
-  "headline": "Short English headline (max 12 words)",
-  "level": "${currentLevel === 'beginner' ? 'A1-A2' : 'B1-B2'}",
-  "level_zh": "${currentLevel === 'beginner' ? '初階' : '中階'}",
-  "sentences": ["Sentence 1.", "Sentence 2.", "Sentence 3.", "Sentence 4.", "Sentence 5."],
-  "article_zh": "完整繁體中文翻譯",
-  "vocab": [
-    {"word": "exactword", "pos": "noun/verb/adj/adv", "zh": "中文解釋", "example": "Example sentence."},
-    {"word": "exactword2", "pos": "noun/verb/adj/adv", "zh": "中文解釋", "example": "Example sentence."},
-    {"word": "exactword3", "pos": "noun/verb/adj/adv", "zh": "中文解釋", "example": "Example sentence."},
-    {"word": "exactword4", "pos": "noun/verb/adj/adv", "zh": "中文解釋", "example": "Example sentence."},
-    {"word": "exactword5", "pos": "noun/verb/adj/adv", "zh": "中文解釋", "example": "Example sentence."}
-  ],
-  "quiz": [
-    {"q": "Question about the article?", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "answer": 0},
-    {"q": "Vocabulary or content question?", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "answer": 1},
-    {"q": "True/false or meaning question?", "options": ["A. True", "B. False", "C. ...", "D. ..."], "answer": 0}
-  ]
-}
-Important: each "word" in vocab must appear EXACTLY (same form) in the sentences array.`;
+  const prompt = `Create a short news article for ${levelDesc} English learners. Topic: ${topic}. Write ${sentCount} sentences. Pick ${vocabCount} key vocabulary words from the article.
+
+Reply ONLY with this JSON (no markdown, no extra text):
+{"headline":"...","level":"${isInter?'B1-B2':'A1-A2'}","level_zh":"${isInter?'中階':'初階'}","sentences":["S1","S2","S3","S4","S5","S6"],"article_zh":"中文翻譯","vocab":[${vocabSample}],"quiz":[{"q":"Q1?","options":["A.","B.","C.","D."],"answer":0},{"q":"Q2?","options":["A.","B.","C.","D."],"answer":1},{"q":"Q3?","options":["A.","B.","C.","D."],"answer":0}]}
+
+Rules: each vocab word must appear exactly in sentences. Keep example sentences under 10 words. Keep Chinese translations under 6 characters.`;
 
   try {
     const res = await fetch(
@@ -397,26 +318,18 @@ Important: each "word" in vocab must appear EXACTLY (same form) in the sentences
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.8, maxOutputTokens: 3000 }
+          generationConfig: { temperature: 0.7, maxOutputTokens: 3000 }
         })
       }
     );
     const data = await res.json();
     if (data.error) throw new Error(data.error.message);
-    let raw = data.candidates[0].content.parts[0].text.replace(/```json|```/g, '').trim();
-    // 若 JSON 被截斷，嘗試補上結尾
-    try {
-      currentArticle = JSON.parse(raw);
-    } catch(e) {
-      // 找到最後一個完整的 } 並截斷
-      const lastBrace = raw.lastIndexOf('}');
-      if (lastBrace !== -1) raw = raw.substring(0, lastBrace + 1);
-      // 嘗試補上缺少的結尾括號
-      const opens = (raw.match(/{/g) || []).length;
-      const closes = (raw.match(/}/g) || []).length;
-      for (let i = 0; i < opens - closes; i++) raw += '}';
-      currentArticle = JSON.parse(raw);
-    }
+    let raw = data.candidates[0].content.parts[0].text.replace(/```json|```/g,'').trim();
+    // 找到第一個 { 和最後一個 } 確保完整 JSON
+    const start = raw.indexOf('{');
+    const end = raw.lastIndexOf('}');
+    if (start !== -1 && end !== -1) raw = raw.substring(start, end + 1);
+    currentArticle = JSON.parse(raw);
     quizAnswered = [false,false,false];
     quizScore = 0;
     renderAll();
@@ -427,7 +340,6 @@ Important: each "word" in vocab must appear EXACTLY (same form) in the sentences
   btnText.innerHTML = '🔄 重新產生 Regenerate';
 }
 
-// ── Render ──
 function renderAll() {
   const a = currentArticle;
   const articleText = a.sentences.join(' ');
@@ -435,19 +347,12 @@ function renderAll() {
   function highlightVocab(text) {
     let r = text;
     a.vocab.forEach(v => {
-      const esc = v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      r = r.replace(new RegExp(`\\b(${esc})\\b`, 'gi'), m =>
+      const esc = v.word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      r = r.replace(new RegExp(`\\b(${esc})\\b`,'gi'), m =>
         `<span class="vocab-word" data-word="${v.word.toLowerCase()}">${m}</span>`);
     });
     return r;
   }
-
-  const sentRows = a.sentences.map((s, i) => `
-    <div class="sent-row" id="sent-${i}">
-      <span class="sent-num">${i+1}</span>
-      <span class="sent-text">${highlightVocab(s)}</span>
-      <button class="sent-play-btn" onclick="speakSentence(${i})">🔊</button>
-    </div>`).join('');
 
   const vocabCards = a.vocab.map(v => `
     <div class="vocab-card">
@@ -462,17 +367,17 @@ function renderAll() {
       </div>
     </div>`).join('');
 
-  const quizHtml = a.quiz.map((q, qi) => `
+  const quizHtml = a.quiz.map((q,qi) => `
     <div id="quiz-${qi}">
       <div class="quiz-q">${qi+1}. ${q.q}</div>
       <div class="quiz-options">
-        ${q.options.map((opt, oi) => `<button class="quiz-opt" onclick="answerQuiz(${qi},${oi},${q.answer})">${opt}</button>`).join('')}
+        ${q.options.map((opt,oi) => `<button class="quiz-opt" onclick="answerQuiz(${qi},${oi},${q.answer})">${opt}</button>`).join('')}
       </div>
       <div class="quiz-result" id="qr-${qi}"></div>
     </div>
-    ${qi < 2 ? '<hr class="quiz-divider">' : ''}`).join('');
+    ${qi<2?'<hr class="quiz-divider">':''}`).join('');
 
-  const lvBadge = a.level_zh === '初階'
+  const lvBadge = a.level_zh==='初階'
     ? `<span class="badge badge-emerald">🌱 初階 ${a.level}</span>`
     : `<span class="badge badge-violet">🚀 中階 ${a.level}</span>`;
 
@@ -501,8 +406,7 @@ function renderAll() {
           <option value="1.3">快速 1.3x</option>
         </select>
       </div>
-      <div class="tts-tip">💡 點擊 🔊 逐句朗讀，或點「朗讀全文」連續播放，跟著一起唸加強記憶！</div>
-      <div class="sentences-wrap">${sentRows}</div>
+      <div class="tts-tip">💡 點擊「朗讀全文」跟著一起唸，加強口說記憶！</div>
     </div>
 
     <div class="card">
@@ -528,7 +432,7 @@ function renderAll() {
   });
 }
 
-// ── TTS ──
+// TTS
 function speakWord(text) {
   stopAll();
   const u = new SpeechSynthesisUtterance(text);
@@ -537,51 +441,27 @@ function speakWord(text) {
   speechSynthesis.speak(u);
 }
 
-function speakSentence(idx) {
-  stopAll();
-  if (!currentArticle) return;
-  highlightSentRow(idx);
-  const u = new SpeechSynthesisUtterance(currentArticle.sentences[idx]);
-  u.lang = 'en-US';
-  u.rate = parseFloat(document.getElementById('speedSelect')?.value || 1);
-  u.onend = () => clearHighlight(idx);
-  currentUtterance = u;
-  speechSynthesis.speak(u);
-}
-
 function toggleFullSpeech() {
   if (isSpeakingFull) { stopAll(); return; }
-  playFullFrom(0);
-}
-
-function playFullFrom(idx) {
-  if (!currentArticle || idx >= currentArticle.sentences.length) { stopAll(); return; }
+  if (!currentArticle) return;
   isSpeakingFull = true;
-  clearAllHighlights();
-  highlightSentRow(idx);
   const btn = document.getElementById('playAllBtn');
   if (btn) { btn.classList.add('playing'); btn.textContent = '⏸ 暫停'; }
-  const u = new SpeechSynthesisUtterance(currentArticle.sentences[idx]);
+  const text = currentArticle.sentences.join(' ');
+  const u = new SpeechSynthesisUtterance(text);
   u.lang = 'en-US';
   u.rate = parseFloat(document.getElementById('speedSelect')?.value || 1);
-  u.onend = () => { clearHighlight(idx); if (isSpeakingFull) playFullFrom(idx+1); };
-  currentUtterance = u;
+  u.onend = () => stopAll();
   speechSynthesis.speak(u);
 }
 
 function stopAll() {
   speechSynthesis.cancel();
   isSpeakingFull = false;
-  clearAllHighlights();
   const btn = document.getElementById('playAllBtn');
   if (btn) { btn.classList.remove('playing'); btn.textContent = '▶️ 朗讀全文'; }
 }
 
-function highlightSentRow(idx) { document.getElementById(`sent-${idx}`)?.classList.add('speaking'); }
-function clearHighlight(idx) { document.getElementById(`sent-${idx}`)?.classList.remove('speaking'); }
-function clearAllHighlights() { document.querySelectorAll('.sent-row').forEach(el => el.classList.remove('speaking')); }
-
-// ── Tooltip ──
 function showTooltip(e) {
   const v = currentArticle?.vocab.find(v => v.word.toLowerCase() === e.target.dataset.word);
   if (!v) return;
@@ -591,22 +471,21 @@ function showTooltip(e) {
   document.getElementById('tZh').textContent = `${v.zh}　e.g. ${v.example}`;
   tt.style.display = 'block';
   const r = e.target.getBoundingClientRect();
-  tt.style.left = Math.min(r.left, window.innerWidth-270) + 'px';
-  tt.style.top = (r.bottom+8) + 'px';
+  tt.style.left = Math.min(r.left, window.innerWidth-270)+'px';
+  tt.style.top = (r.bottom+8)+'px';
 }
 function hideTooltip() { document.getElementById('tooltip').style.display = 'none'; }
 
-// ── Quiz ──
 function answerQuiz(qi, chosen, correct) {
   if (quizAnswered[qi]) return;
   quizAnswered[qi] = true;
-  document.getElementById(`quiz-${qi}`).querySelectorAll('.quiz-opt').forEach((opt, i) => {
+  document.getElementById(`quiz-${qi}`).querySelectorAll('.quiz-opt').forEach((opt,i) => {
     opt.disabled = true;
-    if (i === correct) opt.classList.add('correct');
-    else if (i === chosen) opt.classList.add('wrong');
+    if (i===correct) opt.classList.add('correct');
+    else if (i===chosen) opt.classList.add('wrong');
   });
   const r = document.getElementById(`qr-${qi}`);
-  if (chosen === correct) {
+  if (chosen===correct) {
     quizScore++;
     r.textContent = '✅ 正確！Correct!';
     r.className = 'quiz-result pass';
