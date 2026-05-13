@@ -15,7 +15,7 @@ exports.handler = async (event) => {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...body, thinkingConfig: { thinkingBudget: 0 } })
+        body: JSON.stringify(body)
       }
     );
     const data = await res.json();
